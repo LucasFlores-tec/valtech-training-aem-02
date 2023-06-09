@@ -11,6 +11,7 @@
 }
 
 /* Carousel assets */
+
 .cmp-assets__ {
   display: flex;
   flex-wrap: wrap;
@@ -26,9 +27,8 @@
 
 .cmp-assets__data--img {
   width: 100%;
-  height: auto;
+  height: 270px;
   object-fit: contain;
-  max-height: 200px;
   object-fit: cover;
 }
 
@@ -53,4 +53,42 @@
   .cmp-assets__data {
     width: 100%;
   }
+}
+
+/* Carousel buttons */
+
+.carousel-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carousel-controls button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel-controls button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.carousel-controls button:hover:not(:disabled) {
+  color: #ff0000; /* Customize the hover color as desired */
+}
+
+.carousel-controls button:first-child::before {
+  content: '\276E'; /* Unicode character for left arrow */
+}
+
+.carousel-controls button:last-child::before {
+  content: '\276F'; /* Unicode character for right arrow */
+}
+
+.carousel-controls button::before {
+  display: inline-block;
 }

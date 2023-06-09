@@ -13,7 +13,7 @@ export default class CustomCarousel extends Component {
 
     handleNext = () => {
         const { assets } = this.props;
-        const numAssets = assets.length;
+        const numAssets = assets.filter(asset => asset.display === "true").length;
         const { currentIndex } = this.state;
         if (currentIndex < numAssets - 3) {
           this.setState(prevState => ({
@@ -68,8 +68,8 @@ export default class CustomCarousel extends Component {
                 </div>
                 {showCarousel && (
                     <div class="carousel-controls">
-                        <button onClick={this.handlePrev}>Previous</button>
-                        <button onClick={this.handleNext}>Next</button>
+                        <button onClick={this.handlePrev}></button>
+                        <button onClick={this.handleNext}></button>
                     </div>
                 )}
             </div>
