@@ -1,0 +1,57 @@
+/* CustomCarousel.css */
+
+/* Carousel title */
+.cmp-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cmp-title__text {
+  font-size: 20px;
+}
+
+/* Carousel assets */
+.cmp-assets__ {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cmp-assets__data {
+  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.cmp-assets__data--img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 200px; /* Adjust as needed */
+  object-fit: cover; /* Resize images to cover container */
+}
+
+.cmp-assets__data--desc {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 991px) {
+  .cmp-assets__data {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Responsive layout for smaller screens */
+  .cmp-assets__data {
+    width: 100%;
+  }
+}

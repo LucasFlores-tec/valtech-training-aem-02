@@ -25,6 +25,9 @@ public class ImageModelImpl implements ImageModel {
     private String description;
 
     @ValueMapValue
+    private String alt;
+
+    @ValueMapValue
     private String display;
 
     @Override

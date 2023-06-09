@@ -5,6 +5,7 @@ public interface ImageModel {
     String getFileReference();
     String getLinkURL();
     String getDescription();
+    String getAlt();
     boolean getDisplay();
 
 }

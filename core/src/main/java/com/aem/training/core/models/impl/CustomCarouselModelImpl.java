@@ -6,7 +6,6 @@ import com.aem.training.core.models.CustomCarouselModel;
 import com.aem.training.core.models.ImageModel;
 import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
