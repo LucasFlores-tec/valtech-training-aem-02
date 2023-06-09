@@ -14,8 +14,8 @@ export default class CustomCarousel extends Component {
                 {this.props.assets.map((asset, index) => (
                     <div class="cmp-assets__data" key={index}>
                         <div>
-                            <a href={asset.linkURL}>
-                                <img class="cmp-assets__data--img" src={asset.fileReference} alt={asset.description} />
+                            <a href={asset.linkURL} target="_blank">
+                                <img class="cmp-assets__data--img" src={asset.fileReference} alt={asset.alt} />
                             </a>
                         </div>
                         <div>

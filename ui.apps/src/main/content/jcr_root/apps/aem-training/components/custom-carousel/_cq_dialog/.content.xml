@@ -96,6 +96,14 @@
                                                             fieldLabel="Description"
                                                             name="./description"
                                                             required="false"/>
+                                                        <alt
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Optionally enter a alternative text for your image"
+                                                            emptyText="Enter a alt here..."
+                                                            fieldLabel="Alternative Text"
+                                                            name="./alt"
+                                                            required="false"/>
                                                         <linkURL
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
