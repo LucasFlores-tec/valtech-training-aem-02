@@ -30,9 +30,4 @@ public class ImageModelImpl implements ImageModel {
     @ValueMapValue
     private String display;
 
-    @Override
-    public boolean getDisplay() {
-        return display == "true" ? true : false;
-    }
-
 }

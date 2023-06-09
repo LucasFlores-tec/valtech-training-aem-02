@@ -18,7 +18,7 @@
 }
 
 .cmp-assets__data {
-  width: calc(33.33% - 10px);
+  width: var(--asset-width);
   margin-bottom: 20px;
   box-sizing: border-box;
   padding: 0 5px;
@@ -28,16 +28,16 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  max-height: 200px; /* Adjust as needed */
-  object-fit: cover; /* Resize images to cover container */
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .cmp-assets__data--desc {
   margin-top: 10px;
   font-size: 14px;
-  text-align: justify;
+  text-align: center;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -50,7 +50,6 @@
 }
 
 @media (max-width: 767px) {
-  /* Responsive layout for smaller screens */
   .cmp-assets__data {
     width: 100%;
   }

@@ -6,6 +6,6 @@ public interface ImageModel {
     String getLinkURL();
     String getDescription();
     String getAlt();
-    boolean getDisplay();
+    String getDisplay();
 
 }
