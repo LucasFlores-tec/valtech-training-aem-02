@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { MapTo } from '@adobe/aem-react-editable-components';
 require ('./CustomCarousel.css');
 
+const CustomCarouselConfig = {
+    emptyLabel: 'Custom Carousel',
+
+    isEmpty: function(props) {
+        return !props || !props.title || props.assets.length === 0;
+    }
+};
+
 export default class CustomCarousel extends Component {
 
     constructor(props) {
@@ -77,6 +85,11 @@ export default class CustomCarousel extends Component {
     }
 
     render() {
+
+        if(CustomCarouselConfig.isEmpty(this.props)) {
+            return null;
+        }
+
         return (
             <div>
                 <div class="cmp-title">{this.title}</div>
@@ -86,4 +99,4 @@ export default class CustomCarousel extends Component {
     }
 };
 
-MapTo('aem-training/components/custom-carousel')(CustomCarousel);
+MapTo('aem-training/components/custom-carousel')(CustomCarousel, CustomCarouselConfig);
