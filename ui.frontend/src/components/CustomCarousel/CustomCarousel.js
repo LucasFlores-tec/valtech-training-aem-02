@@ -50,33 +50,49 @@ export default class CustomCarousel extends Component {
         const visibleAssets = assetsToDisplay.slice(currentIndex, currentIndex + 3);
         const numAssets = assetsToDisplay.length;
         const showCarousel = numAssets > 3;
-        let assetWidth;
+        let justifyContent;
+        let spaceBetweenAssets;
 
         switch (numAssets) {
-            case 1: assetWidth = 'calc(100% - 10px)'; break;
-            case 2: assetWidth = 'calc(50% - 10px)'; break;
-            default: assetWidth = 'calc(33.33% - 10px)'; break;
+            case 1:
+                justifyContent = 'center';
+                spaceBetweenAssets = '5px';
+                break;
+            case 2:
+                justifyContent = 'center';
+                spaceBetweenAssets = '10px';
+                break;
+            default:
+                justifyContent = 'space-between';
+                spaceBetweenAssets = '5px';
+                break;
         }
 
         return (
-            <div>
-                <div class="cmp-assets__">
-                    {visibleAssets.map((asset, index) => (
-                        <div class="cmp-assets__data" style={{ '--asset-width': assetWidth }} key={index}>
-                            <div>
-                                <a href={asset.linkURL} target="_blank">
-                                    <img class="cmp-assets__data--img" src={asset.fileReference} alt={asset.alt} />
-                                </a>
-                            </div>
-                            <div>
-                                <p class="cmp-assets__data--desc">{asset.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            <div class="assets">
                 {showCarousel && (
-                    <div class="carousel-controls">
+                    <div class="carousel-controls-prev">
                         <button onClick={this.handlePrev}></button>
+                    </div>
+                )}
+                    <div class="cmp-assets__" style={{ '--justify-content': justifyContent }}>
+                        {visibleAssets.map((asset, index) => (
+                            <div class="cmp-assets__data" style={{ '--space-assets': spaceBetweenAssets }} key={index}>
+                                <div>
+                                    <a href={asset.linkURL} target="_blank">
+                                        <img class="cmp-assets__data--img"
+                                        src={asset.fileReference}
+                                        alt={asset.alt} />
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="cmp-assets__data--desc">{asset.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                {showCarousel && (
+                    <div class="carousel-controls-next">
                         <button onClick={this.handleNext}></button>
                     </div>
                 )}

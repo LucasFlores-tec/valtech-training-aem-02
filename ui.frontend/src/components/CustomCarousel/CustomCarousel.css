@@ -12,17 +12,21 @@
 
 /* Carousel assets */
 
+.assets {
+  display: flex;
+}
+
 .cmp-assets__ {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: var(--justify-content);
 }
 
 .cmp-assets__data {
-  width: var(--asset-width);
+  width: calc(33.33% - 10px);
   margin-bottom: 20px;
   box-sizing: border-box;
-  padding: 0 5px;
+  padding: 0 var(--space-assets);
 }
 
 .cmp-assets__data--img {
@@ -57,13 +61,19 @@
 
 /* Carousel buttons */
 
-.carousel-controls {
+.carousel-controls-prev {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.carousel-controls button {
+.carousel-controls-next {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carousel-controls-prev button {
   background-color: transparent;
   border: none;
   color: #000;
@@ -72,20 +82,38 @@
   transition: color 0.3s ease;
 }
 
-.carousel-controls button:disabled {
+.carousel-controls-prev button:disabled {
   color: #ccc;
   cursor: not-allowed;
 }
 
-.carousel-controls button:hover:not(:disabled) {
+.carousel-controls-prev button:hover:not(:disabled) {
   color: #ff0000; /* Customize the hover color as desired */
 }
 
-.carousel-controls button:first-child::before {
+.carousel-controls-next button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel-controls-next button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.carousel-controls-next button:hover:not(:disabled) {
+  color: #ff0000; /* Customize the hover color as desired */
+}
+
+.carousel-controls-prev button:first-child::before {
   content: '\276E'; /* Unicode character for left arrow */
 }
 
-.carousel-controls button:last-child::before {
+.carousel-controls-next button:last-child::before {
   content: '\276F'; /* Unicode character for right arrow */
 }
 
